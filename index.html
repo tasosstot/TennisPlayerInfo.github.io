@@ -1,0 +1,524 @@
+<html>
+
+
+
+<head>
+    <link rel="manifest" href= "./manifest.json">
+        <meta charset="utf-8">
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Tennis Players - Stotoglou</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="images/favv.png" type="image/x-icon">
+
+
+
+
+
+        <!-- Check if already exists -->
+        <h2 id="intro-w">Add new player Or Check if already exists:</h2>
+        <div id="pre-form">
+         
+                <input type="text" id="retrieveKey" placeholder="Players First Name"><br>
+                <button id="retrieveButton">Check/Add</button>
+
+        </div>
+    
+
+
+
+
+        <form id="form">
+            <table style="
+            margin-left: auto;
+            margin-right: auto;
+        ">
+                <tbody>
+                    <tr>
+                        <td>First Name</td>
+                        <td><input type="text" id="IntroFirstName"/> </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input type="text" id="IntroLastName"/></td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td><input type="text" id="IntroCountry"/></td>
+                    </tr>
+                    <tr>
+                        <td>Single Rank</td>
+                        <td><input type="text" id="IntroSingleRank"/></td>
+                    </tr>
+                    <tr>
+                        <td>Double Rank</td>
+                        <td><input type="text" id="IntroDoubleRank"/></td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td><input type="text" id="IntroAge"/></td>
+                    </tr>
+                    <tr>
+                        <td>Weight </td>
+                        <td><input type="text" id="IntroWeight"/></td>
+                    </tr>
+                    <tr>
+                        <td>Height </td>
+                        <td><input type="text" id="IntroHeight"/></td>
+                    </tr>
+                    <tr>
+                        <td>Coach </td>
+                        <td><input type="text" id="IntroCoach"/></td>
+                    <tr>
+                    <tr>
+                        <td>Date of birth </td>
+                        <td><input type="date" id="Birth" >
+                            
+                    <tr>
+                    <tr>
+                        <td>Turned Pro </td>
+                        <td><input type="date" id="pro"/></td>
+                    <tr>
+                    <tr>
+                        <td>Plays (Hand) </td>
+                        <!-- <td><input type="text" id="play"/></td> -->
+                        <td><select id="play" >
+                            <option>Right-Handed, One-Handed Backhand</option>
+                            <option>Left-Handed, One-Handed Backhand</option>
+                            <option>Right-Handed, Two-Handed Backhand</option>
+                            <option>Left-Handed, Two-Handed Backhand</option>
+                        </select></td>
+                    <tr>
+                    <tr>
+                        <td>Birthplace </td>
+                        <td><input type="text" id="place"/>
+                         </td>
+                        <!-- <td><input type="text" id="place"/></td> -->
+                    <tr>
+                    <tr>
+                        <td>Residence </td>
+                        <td><input type="text" id="residence"/></td>
+                    <tr>
+                    <!-- </tr>
+                        <td>Image Link </td>
+                        <td><input type="text" id="link-img"/></td>
+                    </tr> -->
+                        <td><input id="sumbitButton" type="submit" value="Submit"></td>
+                    </tr>
+                    
+                </tbody>
+                
+            </table>           
+        </form>
+        
+
+</head>
+
+<body>  
+
+<section id="header">
+    <nav>
+        <a href="index.html"> <img src="images/logo.png"> </a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Programme</a></li>
+                </ul>
+            </div>
+    </nav>
+
+<section class="s-header">
+    <div class="player-container">
+        <div class="overview-left">
+            <div class="player-name-box">
+                <div class="fullname">
+                    <div id="firstName"></div>
+                    <div id="lastName"></div>
+                    <div class="flag">
+                        <!-- <img src="https://www.usopen.org/images/flags/AUT_h.gif"> -->
+                        <div id="country">
+                            <h3>Austria</h3>
+                        </div>
+                    </div>
+                </div>    
+            </div>  
+            <div class="standing">
+                <div class="single-rank">
+                    <div id="single-rank">0</div>
+                    <div class="rank-label">Singles Rank</div>
+                </div>
+                <div class="double-rank"> 
+                    <div id="double-rank">0</div>
+                    <div class="rank-label">Doubles Rank</div>
+
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="row-info">
+                    <div class="info-field">Age</div>
+                    <div id="info-value-age"></div>
+                </div>
+
+                <div class="row-info">
+                    <div class="info-field">Weight</div>
+                    <div id="info-value-weight">178lbs (79kg)</div>
+                </div>
+                <div class="row-info">
+                    <div class="info-field">Height</div>
+                    <div id="info-value-height">6'1" (185cm)</div>
+                </div>
+                <div class="row-info">
+                    <div class="info-field">Coach</div>
+                    <div id="info-value-coach">Nicolas Massu</div>
+                </div>
+
+
+
+            </div>
+            <img class="respo-img" src="images/thiem_head_ao20.png" alt="tennis">
+        </div>
+  <!--      <div class="overview-right"> </div> -->
+    </div>
+</section>
+
+<section>
+    <div class="wrapper">
+
+        <header>
+            <h1 id="title-sec" >Player Details</h1>
+        </header>
+            
+    <section class="columns">
+        
+        <div class="column">
+            <h2 id="title-sec" >Player Overview</h2>
+            
+            <div class="ta">
+
+                <p><b>Date of birth:</b> <span id="birth-ap"></span></p>
+                <p><b>Turned Pro:</b> <span id="pro-ap"></span></p>
+                <p><b>Plays (Hand):</b> <span id="play-ap"></span></p>
+                <p><b>Birthplace:</b> <span id="place-ap"></span></p>
+                <p><b>Residence:</b> <span id="residence-ap"></span></p>
+                <!-- <p><b>Career matches won:</b> 295</p>
+                <p><b>Year to date matches won:</b> 20</p>
+                <p><b>High rank for singles:</b> 3</p>
+                <p><b>High rank date for singles:</b> 2 March 2020</p>
+                <p><b>Prize money for singles:</b> $5,114,678 USD</p>      
+                <p><b>Career matches lost:</b> 154</p>
+                <p><b>Year to date matches lost:</b> 6</p>
+                <p><b>High rank for doubles:</b> 67</p>
+                <p><b>High rank date for doubles:</b> 7 October 2019</p>
+                <p><b>Career prize money:</b> $27,247,047 USD</p>      -->
+           </div>
+            </div>
+        
+        <div class="column-table xd">
+            <h2 id="title-sec" >Singles History</h2>
+            <div>
+                <button onclick="hideHistory()" >Hide</button>
+            </div>
+            <table class="styled-table table-sortable" id="hide_Singles">
+                <thead>
+                    <tr id="add">
+                        <th>Year</th>
+                        <th>Australian<br> Open</th>
+                        <th>Roland<br> Garros</th>
+                        <th>Wimbledon</th>
+                        <th>US<br> Open</th>
+                    </tr>
+                </thead>
+                <tbody id="single-table">
+                   
+                </tbody>
+            </table>
+            <div id="forma">
+                <!-- <input type="text" id="newCellOneText" placeholder="Year"/>
+                <input type="text" id="newCellTwoText" placeholder="Australian Open"/>
+                <input type="text" id="newCellThreeText" placeholder="Roland Garros"/>
+                <input type="text" id="newCellFourText" placeholder="Wimbledon"/>
+                <input type="text" id="newCellFifthText" placeholder="US Open"/> -->
+                <label for="fname">Add new row: </label>
+                <select id="newCellOneText">
+                   
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                  </select>
+                  <select id="newCellTwoText">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+
+                  </select>
+                  <select id="newCellThreeText">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                  <select id="newCellFourText">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                  <select id="newCellFifthText">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                  <button type="button" id="btn_submit" onclick="addRowSingleHistory()">Add a Row</button>
+                  <button type="reset" id="btn_reset" style="display: none;"></button>
+
+                <label for="filterName" ><br>Filter by: </label>   
+                <select id="filter" style="color:rgb(221, 136, 8);" oninput="filterTable()">
+                    <option>Reset</option>                                     
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+
+                  </select>
+
+                  </div>
+
+               
+
+
+        </div>
+      
+      <div class="column-table xd">
+
+            <h2 id="title-sec">Doubles History
+            </h2>
+
+            <div>
+                <button onclick="hideHistory_2()" >Hide</button>
+            </div>
+            <table class="styled-table table-sortable" id= "hide_Doubles" >
+                <thead>
+                    <tr >
+                        <th>Year</th>
+                        <th>Australian<br> Open</th>
+                        <th>Roland<br> Garros</th>
+                        <th>Wimbledon</th>
+                        <th>US<br> Open</th>
+                    </tr>
+                </thead>
+                <tbody id="doubles-table"></tbody>
+               
+            </table>
+            <div id="forma2">
+                <label for="fname">Add new row: </label>
+                <select id="newCellOneText2">
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+                    <option>2009</option>
+                    <option>2008</option>
+                    <option>2007</option>
+                    <option>2006</option>
+                    <option>2005</option>
+                    <option>2004</option>
+                    <option>2003</option>
+                    <option>2002</option>
+                    <option>2001</option>
+                    <option>2000</option>
+                  </select>
+                  <select id="newCellTwoText2">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+
+                  </select>
+                  <select id="newCellThreeText2">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                  <select id="newCellFourText2">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                  <select id="newCellFifthText2">
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+                <button type="button" id="btn_submit" onclick="addRowDoubleHistory()">Add a Row</button>
+                <button type="reset" id="btn_reset" style="display: none;"></button>
+               
+                <label for="filterName" ><br>Filter by: </label>   
+                <select id="filter2" style="color:rgb(221, 136, 8);" oninput="filterTable2()">
+                    <option>Reset</option>                                              
+                    <option>1ST</option>
+                    <option>2ND</option>
+                    <option>3RD</option>
+                    <option>5TH</option>
+                    <option>6TH</option>
+                    <option>7TH</option>
+                    <option>8TH</option>
+                    <option>9TH</option>
+                    <option>10TH</option>
+                    <option>RUP</option>
+                    <option>SF</option>
+                  </select>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="column-table tour">
+            <h2 id="title-sec">Tour-Level Seasons</h2>
+        <div>
+            <button onclick="hideHistory_3()" >Hide</button>
+            </div>
+            <table class="styled-table table-sortable " id="hide_Carrer tour-season" >
+                <thead>
+                    <tr>
+                        <th id ="sort-tour">Year</th>
+                        <th>Matches</th>
+                        <th>Win</th>
+                        <th>Lose</th>
+
+                    </tr>
+                </thead>
+                <tbody id="tour-table"></tbody>
+                <tfoot>
+                    <tr>
+                      <td>Carrer</td>
+                      <td id = "matches"> matches</td>
+                      <td id = "wins"> wins</td>
+                      <td id = "lose"> lose</td>
+                    </tr>
+                  </tfoot>
+               
+            </table>
+            </div>
+        </div>
+        
+    </section>	
+        
+        <footer>
+            <div style="text-align: center;">
+                <a href="https://www.facebook.com/1.Dominic.Thiem" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/thiemdomi?lang=el" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.youtube.com/watch?v=6A6DPZ0lWbc" target="_blank" class="fa fa-youtube"></a>
+            </div>
+      
+            </p>
+        </footer>
+    
+    </div>
+</section>
+
+<script src="javascript.js"> </script>
+<script src="intro.js"></script>
+
+<script>
+
+</script>
+</body>
+
+</html>
