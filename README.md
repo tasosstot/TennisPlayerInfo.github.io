@@ -24,4 +24,4 @@ This Progressive Web App (PWA) developed as a simple project for MSc degree and 
 
 
 You can check it in the link below 
-# tasosstot.github.io
+# https://tasosstot.github.io/TennisPlayerInfo.github.io/
