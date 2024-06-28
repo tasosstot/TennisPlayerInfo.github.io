@@ -3,7 +3,9 @@
   padding: 0px;
   font-family: "Lato", sans-serif;
 }
-
+h2{
+  display:none!important
+}
 #header {
   min-height: 80vh;
   width: 100%;
